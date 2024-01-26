@@ -1,0 +1,29 @@
+
+body{
+    display: block;
+    margin: 8px;
+    font-family: 'Handlee', cursive;
+    font-family: 'Nunito', sans-serif;
+    color: white;
+}
+.box{
+    display: flex; 
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 24px;
+    margin: auto;
+    max-width: 75%;
+}
+#item{
+    display: block;
+    width: 20%;
+    padding: 24px;
+    background-color: black;
+    border-radius: 12px;
+
+}
+#item img{
+    max-width: 75%;
+    object-fit: cover;
+    aspect-ratio: 16/9;
+}

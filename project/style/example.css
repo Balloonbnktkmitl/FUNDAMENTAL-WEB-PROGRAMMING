@@ -1,0 +1,75 @@
+body{
+    background-color: #FBF9F1;
+    color: #545454;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.imglogo{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+img{
+    object-fit: cover;
+    height: 20vw;
+}
+.text{
+    padding: 5vw;
+}
+.content{
+    padding: 2vw;
+    background-color: rgb(231, 230, 230);
+    width: 70%;
+    border-radius: 15px;
+    margin: 6vw;
+}
+h1{
+    text-align: center;
+    font-family: myFontsWebBold;
+    font-size: 4vw;
+}
+.head{
+    font-family: myFontsWebBold;
+    font-size: 2vw;
+}
+.intext{
+    font-family: myFontsWebRegular;
+    font-size: 1.5vw;
+    text-indent: 4vw;
+}
+li{
+    font-family: myFontsWebRegular;
+    font-size: 1.5vw;
+    margin: 0.51vw;
+}
+ul{
+    padding-left: 5vw;
+}
+.headul{
+    font-family: myFontsWebBold;
+    font-size: 1.5vw;
+}
+.intextul{
+    font-family: myFontsWebRegular;
+    font-size: 1.5vw;
+    text-indent: 4vw;
+}
+.examplehead{
+    font-family: myFontsWebBold;
+    font-size: 1.5vw;
+    margin: 2vw;
+}
+#big{
+    height: 6vw;
+}
+#func{
+    height: 8vw;
+    margin: 1vw;
+}
+#small{
+    height: 15vw;
+}
+#standard{
+    height: 10vw;
+}

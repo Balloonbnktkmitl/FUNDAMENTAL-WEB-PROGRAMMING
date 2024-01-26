@@ -1,0 +1,113 @@
+body{
+    background-color: #FBF9F1;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    padding: 20px;
+    color: #545454;
+}
+h1{
+    font-family: myFontsWebBold;
+    font-size: 5vw;
+    color: #545454;
+}
+h3{
+    font-family: myFontsWebBold;
+    font-size: 2vw;
+}
+p{
+    font-family: myFontsWebRegular;
+    font-size: 1.5vw;
+}
+.headinfo{
+    font-family: myFontsWebBold;
+    font-size: 1.5vw;
+}
+.information{
+    font-family: myFontsWebRegular;
+    font-size: 1.5vw;
+    text-indent: 2vw;
+}img{
+    width: 5vw;
+    height: 5vw;
+    object-fit: cover;
+    margin: 0.25vw;
+}
+
+.contact{
+    width:70%;
+    border: none;
+    border-radius: 15px;
+    padding: 8px;
+    background-color: rgb(231, 230, 230);
+    height: auto;
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.contactInfo{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.info{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 50px; /* Adjust the gap between columns */
+}
+.info h3{
+    text-align: center;
+}
+.left p{
+    text-indent: 20px;
+    padding-left: 20px;
+}
+
+.left, .right {
+    padding: 5px; /* Add padding to each column */
+}
+
+.pic{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    flex-direction: column;
+}
+.coverPhoto img{
+    position: absolute;
+    height: 45vw;
+    width: 100%;
+    object-fit: cover;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+.profile{
+    position: absolute;
+    border: 3px solid #fff;
+    border-radius: 50%;
+    height: 25vw;
+    width: 25vw;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    margin-top: 45vw;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.profile img{
+    height: 100%;
+    width: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.contactInfo{
+    position: relative;
+    margin-top: 55vw;
+}

@@ -1,0 +1,14 @@
+.ref{
+    display: flex;
+    flex-direction: column;
+}
+.a{
+    font-family: myFontsWebRegular;
+    margin: 1vw;
+    font-size: 1.5vw;
+}
+p{
+    font-family: myFontsWebBold;
+    margin: 1vw;
+    font-size: 1.5vw;
+}

@@ -1,0 +1,138 @@
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- <title>Test</title>
+        <link rel="stylesheet" href="style.css">
+        <script src="script.js"></script> -->
+
+        <title>DOM Changing color and font-size example</title>
+    <style>
+         body { font-Size : 18px;
+            font-family: Arial, Helvetica, sans-serif;  
+        }  
+    </style>
+    </head>
+    <body>
+
+
+        <p id="p">This is paragraph</p>
+        <!--
+        สร้าง Element node ที่เหมือนกับ Element Tag นี้
+        <p>This is a new node</p>
+        -->
+
+        <!--
+        สร้าง list ที่ เป็นรายชื่อวันในสัปดาห์ 
+        <ol>
+        <li></li>
+        </ol>
+        -->
+
+        <!-- <script>
+            let pt = document.createElement("p");
+            let tx = document.createTextNode("This is a new node");
+            pt.appendChild(tx);
+            document.body.appendChild(pt);
+        </script> -->
+
+        <!-- <script>
+            let days = ["Sunday", "Monday", "Tueday", "Wednesday", "Thursday", "Friday", "Saturday"];
+              
+            let ol1 = document.createElement("ol");
+
+            ol1.setAttribute("id", "ole");
+            for(day of days){
+                let lix = document.createElement("li");
+                lix.innerHTML = day;
+                ol1.appendChild(lix);
+            }
+            document.body.appendChild(ol1);
+            // สร้าง list
+            // 1.Sunday
+            // 2.Monday
+            // ........
+        </script> -->
+
+        <!-- <div id="div1">
+            <p id="p1">JavaScript</p> 
+            <p id="p2">Python</p>
+            <p id="p3">TypeScript</p>
+        </div>
+        <hr>
+        <div id="div2">
+            <p>My favourite fruit.</p>
+        </div>
+        
+    
+        <button type="button" onclick="addNode()">Add Node</button>
+        <button type="button" onclick="deleteNode()">Delete Node</button>
+        <button type="button" onclick="addNewImage()">Add Image</button> -->
+
+        <!-- <script> 
+            function addNode() {
+                // <p>a new paragraph</p>
+                let ptag = document.createElement("p");
+                // create text node 
+                let txt = document.createTextNode("a new paragraph");
+                // append text node to a parent node
+                ptag.appendChild(txt);
+                // select a parent node            
+                let parent1 = document.getElementById("div1");
+                // append element node to a parent node
+                parent1.appendChild(ptag);
+                /*  uncomment in step 2 **/
+                // let childP1 = document.getElementById("p1");
+                // parent1.insertBefore(ptag, childP1);
+                           
+            }
+            function addNewImage() {
+                // <img src="apples.jpg">
+                let imgtag = document.createElement("img");
+    
+                let srcAttr = document.createAttribute("src");
+                srcAttr.value ="http://10.0.15.21/lab/lab4/apples.jpg";           
+                imgtag.setAttributeNode(srcAttr);
+                // method 2
+                //imgtag.setAttribute('src', 'apples.jpg');
+    
+                // add to <body>
+                // document.body.appendChild(imgtag);       
+                let parent2 = document.getElementById("div2");
+                parent2.appendChild(imgtag);                            
+            }
+        
+            function deleteNode() {
+                let parent2 = document.getElementById("div1");
+                let delPtag = document.getElementById("p1");
+                parent2.removeChild(delPtag);
+            }
+    </script> -->
+    <p id="pid">Question ? </p>
+    <button onclick="changeText();">Click me</button>
+    <div id="ans"></div>
+    <script>
+        function changeText() {
+                // step 1
+                let p = document.getElementById("pid");
+                p.style.color = "blue";
+                p.style.fontFamily = "Comic Sans MS";
+                
+                
+                // step 2
+                // create label
+                let la = document.createElement("label");
+                la.innerHTML ="Answer : "
+                // create input
+                let inp = document.createElement("input");
+                let inatt = document.createAttribute("id"); 
+                inatt.value = "answerbox";
+                // add to parent 
+                let parent = document.getElementById("ans");
+                parent.appendChild(la);
+                parent.appendChild(inp);
+        }
+    </script>
+
+    </body>
+</html>

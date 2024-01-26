@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=0.1">
+        <title>Lab 4.2</title>
+        <link rel="stylesheet" href="style.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet">
+    <body>
+        <div id="container">
+                <p id="pname">
+                    <label for="infname" id="fname">ชื่อ : </label>
+                    <input type="text" id="infname">
+                </p>
+                <p id="lpname">
+                    <label for="inlname" id="lname">นามสกุล : </label>
+                    <input type="text" id="inlname">
+                </p>
+                <p id="cpname">
+                    <label for='Country' id="cname">ประเทศ :</label>
+                        <select id="Country" name="Country">
+                            <option value="00" selected="selected">เลือกประเทศ</option>
+                            <option value="01">ไทย</option>
+                            <option value="02">เวียดนาม</option>
+                            <option value="03">ลาว</option>
+                            <option value="04">มาเลเซีย</option>
+                            <option value="05">สิงคโปร์</option>
+                            <option value="06">ฟิลิปปินส์</option>
+                            <option value="07">เมียนมาร์</option>
+                            <option value="08">กัมพูชา</option>
+                            <option value="09">บรูไน</option>
+                            <option value="10">อินโดนีเซีย</option>
+                        </select>
+                </p>
+                <button id="but" onclick="change()" value="th">เปลี่ยนเป็นภาษาอังกฤษ</button>
+        </div>
+    </body>
+    <script>
+        let pfname = document.getElementById("fname");
+        let plname = document.getElementById("lname");
+        let pcname = document.getElementById("cname");
+        let select = document.getElementById("Country");
+
+        function change(){
+            let button = document.getElementById("but").value;
+            if(button == "th"){
+                document.getElementById("but").value = "en";
+                pfname.innerHTML = "Name : ";
+                plname.innerHTML = "Lastname : ";
+                pcname.innerHTML = "Country : ";
+                document.getElementById("but").innerHTML = "Change to Thai";
+                updateSelectOptions(["Choose a country", "Thailand", "Vietnam", "Laos", "Malaysia", "Singapore", "Philippines", "Myanmar", "Cambodia", "Brunei", "Indonesia"]);
+            }
+            else if(button == "en"){
+                document.getElementById("but").innerHTML = "เปลี่ยนเป็นภาษาอังกฤษ";
+                document.getElementById("but").value = "th";
+                pfname.innerHTML = "ชื่อ : ";
+                plname.innerHTML = "นามสกุล : ";
+                pcname.innerHTML = "ประเทศ : ";
+                updateSelectOptions(["เลือกประเทศ", "ไทย", "เวียดนาม", "ลาว", "มาเลเซีย", "สิงคโปร์", "ฟิลิปปินส์", "เมียนมาร์", "กัมพูชา", "บรูไน", "อินโดนีเซีย"]);
+            }
+        }
+        function updateSelectOptions(options) {
+             // Remove existing options
+            while (select.firstChild) {
+                select.removeChild(select.firstChild);
+            }
+
+            // Add new options
+            options.forEach(function (option, index) {
+                let newOption = document.createElement("option");
+                newOption.value = index;
+                newOption.text = option;
+                select.add(newOption);
+            });
+        }
+    </script>
+</html>

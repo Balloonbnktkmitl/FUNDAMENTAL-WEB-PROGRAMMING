@@ -1,0 +1,100 @@
+body{
+    background-color: #FBF9F1;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    gap: 3vw;
+    padding: 1vw;
+}
+.box{
+    width: 80%;
+    height: 80%;
+    background-color: #FBF9F1;
+    display: flex;
+    border-radius: 3vw;
+    box-shadow: 1vw 1vw 1vw 1vw #888888;
+    border-radius: 1.25vw;
+}
+img{
+    border-radius: 1.25vw;
+}
+.btn1{
+    display: inline-block;
+    border-radius: 3vw;
+    background-color: #545454;
+    border: none;
+    color: #FFFFFF;
+    text-align: center;
+    font-size: 2vw;
+    padding: 1vw;
+    width: 18vw;
+    transition: all 0.5s;
+    cursor: pointer;
+    margin: 1vw;
+    font-family: myFontsWebRegular;
+}
+.btn2{
+    display: inline-block;
+    border-radius: 3vw;
+    background-color: #545454;
+    border: none;
+    color: #FFFFFF;
+    text-align: center;
+    font-size: 2vw;
+    padding: 1vw;
+    width: 18vw;
+    transition: all 0.5s;
+    cursor: pointer;
+    margin: 1vw;
+    font-family: myFontsWebRegular;
+}
+.btn1 span{
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.5s;
+}
+.btn2 span{
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.5s;
+}
+
+.btn1 span:after {
+    content: '\00bb';
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    right: -20px;
+    transition: 0.5s;
+}
+
+.btn2 span:after {
+    content: '\00ab';
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    left: -20px;
+    transition: 0.5s;
+}
+
+.btn1:hover span {
+  padding-right: 25px;
+}
+
+.btn1:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+
+.btn2:hover span {
+    padding-left: 25px;
+  }
+  
+  .btn2:hover span:after {
+    opacity: 1;
+    left: 0;
+  }
+  

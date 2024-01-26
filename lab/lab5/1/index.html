@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width initial-scale=1.0">
+        <title>Lab 5.1</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Itim&display=swap" rel="stylesheet">
+        <style>
+            body {
+                padding: 10px;
+                font-family: 'Itim', cursive;
+            }
+            p {
+                font-size: 16px;
+            }
+        </style>
+    </head>
+    <body>
+        <p id="out"></p>
+    </body>
+    <script>
+        getJSON('employees.JSON');
+        async function getJSON(url) {
+            let response = await fetch(url);
+            let info = await response.json();
+            info.forEach(element => {
+                const p = document.createElement("p");
+                const firstNameElement = document.createElement("strong");
+                const lastNameElement = document.createElement("strong");
+
+                firstNameElement.innerHTML = element.firstName + " ";
+                lastNameElement.innerHTML = element.lastName;
+                firstNameElement.style.fontWeight = "bold";
+                lastNameElement.style.fontWeight = "bold";
+
+                p.appendChild(document.createTextNode(element.id + "."));
+                p.appendChild(firstNameElement);
+                p.appendChild(lastNameElement);
+                p.appendChild(document.createTextNode(" (" + element.gender + ") is a " + element.position + ", " + element.address));
+
+                document.getElementById("out").appendChild(p);
+            });
+        }
+    </script>
+</html>

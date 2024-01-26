@@ -1,0 +1,12 @@
+@font-face {
+    font-family: myFontsWebRegular;
+    src: url(fonts/K2D-Regular.ttf);
+}
+@font-face {
+    font-family: myFontsWebMedium;
+    src: url(fonts/K2D-Medium.ttf);
+}
+@font-face {
+    font-family: myFontsWebBold;
+    src: url(fonts/K2D-Bold.ttf);
+}

@@ -1,0 +1,43 @@
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=0.1">
+        <title>Lab 4.1</title>
+        <link rel="stylesheet" href="style.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk&display=swap" rel="stylesheet">
+    </head>
+    <body>
+        <div id="container">
+            <div id="question">
+                <p id="pval1">Value 1 :<input type="number" id="val1"></p>
+                <p id="pval2">Value 2 :<input type="number" id="val2"></p>
+                <button id="but" onclick="cal()">Calculate</button>
+            </div>
+            <div id="answer">
+                <p id="pans">Answer : </p>
+            </div>
+            <p>ประวัติ(สามารถเลื่อนได้)</p>
+            <div id="history">
+
+            </div>
+        </div>
+    </body>
+    <script>
+        let history = [];
+        function cal(){
+            let val1 = document.getElementById("val1").value;
+            let val2 = document.getElementById("val2").value;
+            if(val1 == "" || val2 == ""){
+                alert("Please input value");
+                return;
+            }
+            let ans = parseInt(val1) + parseInt(val2);
+            document.getElementById("pans").innerHTML = "Answer : " + ans;
+            let h1 = document.createElement("p");
+            h1.innerHTML = val1 + " + " + val2 + " = " + ans;
+            document.getElementById("history").appendChild(h1);
+        }
+    </script>
+</html>

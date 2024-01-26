@@ -1,0 +1,127 @@
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Lab5 Test</title>
+        <!-- <script src="script.js"></script> -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+        <style>
+            #container{
+                margin: 10px;
+            }
+        </style>
+    </head>
+    <body>
+        <!-- <p id="out"></p> -->
+
+        <!-- <script>
+        let myObj = {
+            "firstname":"John",
+            "lastname":"Doe",
+            "age":30,
+            "cars":[ "Ford", "BMW", "Fiat" ]
+        };
+        document.getElementById("out").innerHTML = myObj.cars[1];
+        document.getElementById("out").innerHTML = myObj.firstname;
+        </script> -->
+
+        <!-- <script>
+            let requestURL = 'superheroes.json'; 
+            let request = new XMLHttpRequest(); 
+            request.onreadystatechange = function () { 
+                if (request.readyState == 4 && request.status == 200) {             
+                    dataDisplay(JSON.parse(request.responseText));            
+                } }; 
+            request.open("GET", requestURL, true); 
+            request.send(); 
+            
+            function dataDisplay(data) {  
+                let text = '';
+                text += data.squadName + '<br>'; 
+                text += data.homeTown + '<br>'; 
+        
+                for ( .... ) { 
+                   
+                } 
+                document.getElementById("out").innerHTML = text;
+            }
+        </script>  -->
+        
+        <!-- ***** วิธีที่ 2 *****
+        <script>
+                getRemoteData("superheroes.json");
+                async function getRemoteData(url) {            
+                    let datObject = await fetch(url);
+                    let superheroes = await datObject.json();
+                   
+                    let text = "<h1>" + superheroes.squadName + "</h1>";
+                    
+                    document.getElementById("out").innerHTML = text;
+                }
+        
+        </script> -->
+        <div id="container">
+        <form id="myForm" role="form">
+            <div class="form-group"> <label for='FirstName'>ชื่อ:</label>
+                <input type="text" class="form-control" id="FirstName" name="FirstName" />
+            </div>
+            <div class="form-group"><label for='LastName'>นามสกุล:</label>
+                <input type="text" class="form-control" id="LastName" name="LastName" />
+            </div>
+            <div class="form-group"><label for='Address'>ที่อยู่</label>
+                <textarea cols="20" class="form-control" rows="5" id="Address" name="Address"></textarea>
+            </div>
+            <div class="form-group"><label for='Country'>ประเทศ:</label>
+                <select id="Country" name="Country">
+                    <option value="000" selected="selected">[เลือกประเทศ]</option>
+                    <option value="Thailand">Thailand</option>
+                    <option value="Vietnam">Vietnam</option>
+                    <option value="Laos">Laos</option>
+                    <option value="Malaysia">Malaysia</option>
+                    <option value="Singapore">Singapore</option>
+                    <option value="Philippines">Philippines</option>
+                    <option value="Myanmar">Myanmar</option>
+                    <option value="Cambodia">Cambodia</option>
+                    <option value="Indonesia">Brunei</option>
+                    <option value="Indonesia">Indonesia</option>
+                </select>
+            </div>
+        </form>
+        <button onclick="SaveDatInForm()">Save data</button>
+        <button onclick="showLocalData()">Show data</button>,loltf
+        </div>
+
+
+        <p id = "p1"></p>
+
+
+        <script>
+            function SaveDatInForm() { 
+                let fname = document.forms.myForm.FirstName.value;
+                let lname = document.forms.myForm.LastName.value;
+                let addr = document.forms.myForm.Address.value;
+                let ctry = document.forms.myForm.Country.value;
+                // save data to local storage
+                    localStorage.setItem('userFirstName',fname);
+                    localStorage.setItem('userLastName',lname);
+                    localStorage.setItem('userAddress',addr);
+                    localStorage.setItem('userCountry',ctry);
+                alert("Data saved");        
+                }
+                function showLocalData(){
+                    // load data from local storage
+                    let fn = localStorage.getItem('userFirstName');
+                    let ln = localStorage.getItem('userLastName');
+                    let ad = localStorage.getItem('userAddress');
+                    let ct = localStorage.getItem('userCountry');
+                    
+
+                    let out = document.getElementById("p1");
+                    out.innerHTML = `${fn} ${ln} ${ad} ${ct}`;
+                }
+        </script>
+    </body>
+</html>

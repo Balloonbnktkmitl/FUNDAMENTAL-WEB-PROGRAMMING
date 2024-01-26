@@ -1,0 +1,50 @@
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=0.1">
+        <title>Lab 4.3</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+       <h1>ลงทะเบียนร่วมงาน</h1>
+       <div id="inputdata">
+        <input type="text" id="code" placeholder="รหัสนักศึกษา">
+        <input type="text" id="name" placeholder="ชื่อ">
+        <input type="text" id="lastname" placeholder="นามสกุล">
+        <button id="but" onclick="register()">ลงทะเบียน</button>
+       </div>
+       <hr>
+       <div class="history">
+            <table id="table" border="1">
+                <tr>
+                    <th>ลำดับ</th>
+                    <th>รหัสนักศึกษา</th>
+                    <th>ชื่อ</th>
+                    <th>นามสกุล</th>
+                </tr>
+            </table>
+        </div>
+    </body>
+    <script>
+        function register(){
+            let code = document.getElementById("code").value;
+            let name = document.getElementById("name").value;
+            let lastname = document.getElementById("lastname").value;
+            if(code == "" || name == "" || lastname == ""){
+                alert("Please input value");
+                return;
+            }
+            let table = document.getElementById("table");
+
+            let row = table.insertRow(table.rows.length);
+            let cell0 = row.insertCell(0);
+            let cell1 = row.insertCell(1);
+            let cell2 = row.insertCell(2);
+            let cell3 = row.insertCell(3);
+            cell0.innerHTML = table.rows.length - 1; 
+            cell1.innerHTML = code;
+            cell2.innerHTML = name;
+            cell3.innerHTML = lastname;
+        }
+    </script>
+</html>

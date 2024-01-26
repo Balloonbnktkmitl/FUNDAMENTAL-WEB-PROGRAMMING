@@ -1,0 +1,55 @@
+body{
+    background-color: #FBF9F1;
+    color: #545454;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.content{
+    padding: 2vw;
+    width: 70%;
+    border-radius: 15px;
+    margin: 6vw;
+}
+.imglogo{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+img{
+    object-fit: cover;
+    height: 20vw;
+}
+.buttonlayer{
+    display: flex;
+    align-items: center;
+    justify-content: center
+}
+.button {
+    margin: 1vw;
+    padding: 1vw;
+    font-size: 2vw;
+    text-align: center;
+    cursor: pointer;
+    outline: none;
+    color: #fff;
+    background-color: #545454;
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 9px #999;
+  }
+  
+  .button:hover {background-color: #AAD7D9}
+  
+  .button:active {
+    background-color: #AAD7D9;
+    box-shadow: 0 5px #666;
+    transform: translateY(4px);
+  }
+
+#java{
+    height: 30vw;
+}
+#con{
+    margin: 1vw;
+}

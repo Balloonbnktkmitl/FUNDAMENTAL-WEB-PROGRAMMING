@@ -1,0 +1,14 @@
+body{
+    padding: 10px;
+}
+.layout{
+    display: grid;
+    grid-template-columns: 100px 100px;
+}
+img{
+    width: 100%;
+    height: 100%;
+}
+.btn{
+    margin: 10px;
+}
