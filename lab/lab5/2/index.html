@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width initial-scale=1.0">
+        <title>Lab 5.1</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Itim&display=swap" rel="stylesheet">
+        <style>
+            body {
+                background-image: url("https://gistda.or.th/images/article/news2310/n20210804_2310.jpg");
+                padding: 10px;
+                font-family: 'Itim', cursive;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+            p {
+                font-size: 16px;
+            }
+            .container {
+                background-color: white;
+                padding: 20px;
+                border-radius: 10px;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container" id="out">
+        </div>
+    </body>
+    <script>
+        getJSON('person.json');
+        async function getJSON(url) {
+            let response = await fetch(url);
+            let info = await response.json();
+            let div = document.getElementById("out");
+            let p = document.createElement("p");
+            p.innerHTML = info[0].firstName + " " + info[0].lastName + ", " + info[0].gender.type + " "+ info[0].age + " years old.<br>"
+            + info[0].address.streetAddress + " " + info[0].address.city + " "+ info[0].address.state+"<br>" + info[0].address.postalCode + "<br>"+
+            info[0].phoneNumber[0].type + " : " + info[0].phoneNumber[0].number + "<br>" + info[0].phoneNumber[1].type + " : " + info[0].phoneNumber[1].number;
+            div.appendChild(p);
+        }
+    </script>
+</html>

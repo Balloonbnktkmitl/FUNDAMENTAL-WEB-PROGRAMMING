@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width initial-scale=1.0">
+        <title>Lab 5.1</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Itim&display=swap" rel="stylesheet">
+        <style>
+            body {
+                background-image: url("https://gistda.or.th/images/article/news2310/n20210804_2310.jpg");
+                padding: 10px;
+                font-family: 'Itim', cursive;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                flex-direction: column;
+                
+            }
+            p {
+                font-size: 16px;
+            }
+            .container {
+                background-color: white;
+                padding: 20px;
+                border-radius: 10px;
+            }
+            #btn{
+                margin: 5px;
+                padding: 5px;
+                border-radius: 5px;
+                background-color: #f5f5f5;
+                border: 1px solid #f5f5f5;
+                font-size: 20px;
+                
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container" id="out">
+        </div>
+        <button id="btn" onclick="checkAnswer()">showAnswer</button>
+    </body>
+    <script>
+        getRemoteData("questionAnswerData.json");
+        async function getRemoteData(url) {            
+            let response = await fetch(url);
+            info = await response.json();
+
+            let i = 1;
+            let text = '';
+            info.forEach(element => {
+                let pquestion = document.createElement("p");
+                let panswer1 = document.createElement("p");
+                let panswer2 = document.createElement("p");
+                let panswer3 = document.createElement("p");
+                let panswer4 = document.createElement("p");
+                pquestion.id = i;
+
+                pquestion.innerHTML = i + ") " + element.question;
+                panswer1.innerHTML = '<input type="radio" id="btn" name="question' + i + '"">' + element.answers.a;
+                panswer2.innerHTML = '<input type="radio" id="btn" name="question' + i + '"">' + element.answers.b;
+                panswer3.innerHTML = '<input type="radio" id="btn" name="question' + i + '"">' + element.answers.c;
+                i += 1;
+
+                document.getElementById("out").appendChild(pquestion);
+                document.getElementById("out").appendChild(panswer1);
+                document.getElementById("out").appendChild(panswer2);
+                document.getElementById("out").appendChild(panswer3);
+            });            
+        }
+
+
+    let status = true;
+    let info;
+    function checkAnswer() {
+        if (status) {
+            for (let i = 0; i < 10; i++) {
+                let button = document.getElementById("btn");
+                let parent_div = document.getElementById(i + 1);
+
+                let answer = document.createElement("p")
+                answer.innerHTML = "Correct Answer: " + info[i].answers.correct;
+
+                answer.style.color = "red";
+                parent_div.appendChild(answer);
+
+            } 
+            status = false;
+        } else {
+            location.reload();
+        }
+
+    }
+    </script>
+</html>
